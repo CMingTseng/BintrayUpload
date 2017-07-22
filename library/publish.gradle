@@ -1,7 +1,6 @@
 def siteUrl = project.site_url
 def gitUrl = project.git_url
 def issueUrl = project.git_issue_url
-def artifactName = project.upload_artifact_id
 
 group = project.upload_group_id
 version = project.upload_version
@@ -31,9 +30,6 @@ install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
         pom {
-
-            artifactId = artifactName
-            
             project {
                 packaging 'aar'
                 name project.bintray_pkg_name
